@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+    width: 120px;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(10, 10, 10, .65);
+    box-shadow: 0 8px 32px rgb(2, 4, 24);
+    border-right: 2px solid rgba(255, 255, 255, .09);
+    transition: .4s ease-in-out;
+}
+
+.sidebar.open {
+    width: 360px;
+}
+
+.sidebar .logo {
+    width: 100%;
+    height: 240px;
+    padding: 40px 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.sidebar .logo img {
+    width: 56px;
+    transition: .4s;
+}
+
+.sidebar.open .logo img {
+    width: 96px;
+}
+
+.sidebar .logo h3 {
+    color: #fff;
+    font-size: 36px;
+    margin-top: 12px;
+    font-variant: small-caps;
+    pointer-events: none;
+    scale: 0;
+    opacity: 0;
+}
+
+.sidebar.open .logo h3 {
+    scale: 1;
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+.sidebar .nav-title {
+    color: #dadada;
+    margin: 40px 0 18px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.open .nav-title {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+.sidebar nav {
+    padding: 0 30px;
+}
+
+.sidebar nav .nav-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 4px;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    margin: 8px 0;
+    color: #fff;
+    transition: .3s;
+}
+
+.sidebar nav .nav-item.active {
+    background: #ff328e !important;
+}
+
+.sidebar nav .nav-item:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.sidebar nav .nav-item i {
+    font-size: 26px;
+}
+
+.sidebar nav .nav-item span {
+    font-size: 18px;
+    margin-left: 8px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.open nav .nav-item span {
+    opacity: 1;
+    pointer-events: visible;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+.sidebar hr {
+    width: 100%;
+    height: 2px;
+    border-radius: 3px;
+    margin: 40px 0 50px;
+    background: rgba(255, 255, 255, .1);
+    opacity: 0;
+}
+
+.sidebar.open hr {
+    opacity: 1;
+    transition: .4s;
+}
+
+.sidebar .toggle {
+    cursor: pointer;
+    position: absolute;
+    color: #fff;
+    top: 180px;
+    right: -20px;
+    font-size: 38px;
+    line-height: 50%;
+    text-align: center;
+    border-radius: 50%;
+    padding: 2px 0 2px 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 50%,
+        rgba(10, 10, 10, .65) 50%
+    );
+}
+
+.sidebar.open .toggle {
+    transform: translateY(45px);
+}
+
+.sidebar .toggle i {
+    transition: .4s linear;
+}
+
+.sidebar.open .toggle i {
+    transform: rotateY(180deg);
+}
